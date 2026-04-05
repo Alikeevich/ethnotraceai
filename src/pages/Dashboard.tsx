@@ -261,7 +261,7 @@ const FAKE_ORDERS = [
   { country: 'Australia', amount: '$110.00', marketplace: 'Amazon' },
 ];
 
-function ListingsTab({ apiKey }: { apiKey: string }) {
+function ListingsTab(_props: { apiKey: string }) {
   const [listings, setListings] = useState<SavedListing[]>([]);
   const [stats, setStats] = useState({ total: 0, published: 0, totalCo2: 0, totalWater: 0, avgScore: 0 });
   const [orderSnack, setOrderSnack] = useState(false);
