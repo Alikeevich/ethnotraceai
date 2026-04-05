@@ -200,7 +200,7 @@ Use this exact structure (no intro phrases like "Привет" or "Вот ваш
 Mention real trends: boho, cottagecore, maximalism, quiet luxury etc.`
               }]
             }],
-            generationConfig: { temperature: 0.8, maxOutputTokens: 600 },
+            generationConfig: { temperature: 0.8, maxOutputTokens: 2000 },
           }),
         }
       );
