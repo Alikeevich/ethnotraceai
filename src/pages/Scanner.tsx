@@ -114,7 +114,6 @@ export default function Scanner() {
   const [isDragging, setIsDragging] = useState(false);
   const [description, setDescription] = useState('');
   const [marketplace, setMarketplace] = useState('etsy');
-  const [apiKey, setApiKey] = useState('');
   const { connectedMarkets, user } = useAuth();
   
   const[loading, setLoading] = useState(false);
@@ -153,7 +152,7 @@ export default function Scanner() {
 
   const generateAll = async () => {
     if (!image) { setError('Пожалуйста, загрузите фото товара'); return; }
-    const key = apiKey.trim() || (import.meta.env.VITE_GEMINI_API_KEY as string);
+    const key = import.meta.env.VITE_GEMINI_API_KEY as string;
     if (!key) { setError('Введите API ключ Google Gemini'); return; }
 
     setError('');
