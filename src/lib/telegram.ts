@@ -183,16 +183,24 @@ export async function notifyWeeklyTrends(geminiApiKey: string): Promise<boolean>
           body: JSON.stringify({
             contents: [{
               parts: [{
-                text: `You are a market analyst for Etsy handmade products. 
+                text: `You are a market analyst for Etsy handmade products.
 Generate a SHORT weekly trend report for a Kazakh artisan selling handmade products.
-Write in Russian. Max 200 words. Format:
-- 3 trending product categories this week on Etsy
-- 1 tip for better SEO
-- 1 pricing insight
-Keep it practical and specific. Mention real trends like boho, cottagecore, maximalism etc.`
+Write in Russian. STRICT LIMIT: maximum 800 characters total.
+Use this exact structure (no intro phrases like "Привет" or "Вот ваш"):
+
+🔥 Топ-3 категории недели:
+- [category] — [1 sentence why]
+- [category] — [1 sentence why]  
+- [category] — [1 sentence why]
+
+💡 SEO совет: [1 sentence]
+
+💰 Цены: [1 sentence]
+
+Mention real trends: boho, cottagecore, maximalism, quiet luxury etc.`
               }]
             }],
-            generationConfig: { temperature: 0.8, maxOutputTokens: 300 },
+            generationConfig: { temperature: 0.8, maxOutputTokens: 600 },
           }),
         }
       );
