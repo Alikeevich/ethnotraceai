@@ -425,8 +425,6 @@ export default function Scanner() {
             </ToggleButtonGroup>
           </Box>
 
-          <TextField fullWidth type="password" size="small" label="Ключ Gemini API (временно для работы демо)" value={apiKey} onChange={(e) => setApiKey(e.target.value)} sx={{ mb: 3 }} />
-
           {error && <Alert severity="error" sx={{ mb: 3, borderRadius: 2 }}>{error}</Alert>}
 
           <Button 
